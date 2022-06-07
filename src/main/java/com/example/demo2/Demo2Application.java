@@ -19,7 +19,7 @@ public class Demo2Application {
     @Bean
     CommandLineRunner commandLineRunner(BillboardRepository br){
         return args -> {
-            br.save(new Billboard(null,"test",new Date(),"Admin",new Date(),"test"));
+            br .save(new Billboard(null,"test",new Date(),"Admin",new Date(),"test"));
 
             br.findAll().forEach(p->{
                 System.out.println(p.getId());
