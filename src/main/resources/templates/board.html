@@ -10,7 +10,7 @@
 <body>
 <div class="container mt-3">
     <h2>修改公佈事項</h2>
-    <form action="/addbillboard" method="post" th:each="p:${bordercontent}">
+    <form action="/border" method="post" th:each="p:${bordercontent}">
         <div class="mb-3 mt-3">
             <label for="title">標題:</label>
             <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" th:value="${p.title}">
@@ -25,13 +25,15 @@
         </div>
         <div class="mb-3">
         <label for="post_name">公佈者:</label>
-        <input type="text" class="form-control" readonly="true" id="post_name" placeholder="Enter title" name="title" th:value="${p.name}">
+        <input type="text" class="form-control" readonly="true" id="post_name" placeholder="Enter title" name="pname" th:value="${p.name}">
 </div>
         <div class="mb-3 mt-3">
             <label for="content">公佈內容:</label>
             <textarea class="form-control" id="content" rows="5" name="content" th:inline="text" >[[${p.content}]]</textarea>
         </div>
-
+        <div class="mb-3">
+            <input type="text" class="form-control" readonly="true" hidden="true" id="id" placeholder="Enter title" name="id" th:value="${p.id}">
+        </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
