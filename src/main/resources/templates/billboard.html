@@ -50,14 +50,14 @@
             </table>
             <div class="clearfix"></div>
             <ul class="pagination pull-right">
-                <li th:if="${pp} ge 0" ><a th:href="@{'http://localhost:8082/?page='+${pp}}"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                <li th:if="${pp} ge 0" ><a th:href="@{'http://192.168.129.131:8080/?page='+${pp}}"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
                 <li th:each="page,status:${pages}" >
                     <a th:text="${status.index}"
-                    th:href="@{'http://localhost:8082/?page='+${status.index}}"
+                    th:href="@{'http://192.168.129.131:8080/?page='+${status.index}}"
                     ></a>
                 </li>
                 <li th:if="${cp} gt ${size}" class="disabled"><span class="glyphicon glyphicon-chevron-right"></span></li>
-                <li th:if="${cp} lt ${size}"><a th:href="@{'http://localhost:8082/?page='+${cp}}"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+                <li th:if="${cp} lt ${size}"><a th:href="@{'http://192.168.129.131:8080/?page='+${cp}}"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
             </ul>
         </div>
         </div>
