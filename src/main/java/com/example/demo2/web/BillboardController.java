@@ -24,6 +24,13 @@ public class BillboardController {
         model.addAttribute("cp",billboardList.getNumber()+1);
         model.addAttribute("pp",billboardList.getNumber()-1);
         model.addAttribute("size",billboardList.getTotalPages());
+        model.addAttribute("currentPage",page);
         return "billboard";
+    }
+
+    @GetMapping(path="/delete")
+    public String remove(@RequestParam(name="id") Long id, @RequestParam(name="page") int p){
+        br.deleteById(id);
+        return "redirect:/?page=" +p;
     }
 }

@@ -17,4 +17,18 @@ public class Demo2Application {
         SpringApplication.run(Demo2Application.class, args);
     }
 
+    /*@Bean
+    CommandLineRunner commandLineRunner(BillboardRepository br){
+        return args -> {
+            for(int i=0; i<100;i++){
+                br .save(new Billboard(null,"test",new Date(),"Admin",new Date(),"test"));
+            }
+
+
+            br.findAll().forEach(p->{
+                System.out.println(p.getId());
+            });
+        };
+    }
+*/
 }
