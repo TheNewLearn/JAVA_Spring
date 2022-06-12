@@ -31,7 +31,7 @@ public class Editboard {
         Date pd = formatter.parse(post_date);
         Date ed = formatter.parse(enddate);
         br.save(new Billboard(id,title,pd,"Admin",ed,content));
-        return "redirect:/index";
+        return "redirect:/";
     }
 
 

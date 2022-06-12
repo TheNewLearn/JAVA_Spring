@@ -14,6 +14,6 @@ public class Deleteboard {
     @GetMapping(path="/delete")
     public String remove(@RequestParam(name="id") Long id){
         br.deleteById(id);
-        return "redirect:/index";
+        return "redirect:/";
     }
 }

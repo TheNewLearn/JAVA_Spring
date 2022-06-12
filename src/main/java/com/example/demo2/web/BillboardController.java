@@ -16,11 +16,14 @@ import java.util.List;
 @AllArgsConstructor
 public class BillboardController {
     private BillboardRepository br;
-    @GetMapping(path = "/index")
+    @GetMapping(path = "/")
     public String billboard(Model model, @RequestParam(name="page",defaultValue = "0")int page){
         Page<Billboard> billboardList = br.findAll(PageRequest.of(page,10));
         model.addAttribute("listbillboard",billboardList.getContent());
         model.addAttribute("pages",new int[billboardList.getTotalPages()]);
+        model.addAttribute("cp",billboardList.getNumber()+1);
+        model.addAttribute("pp",billboardList.getNumber()-1);
+        model.addAttribute("size",billboardList.getTotalPages());
         return "billboard";
     }
 }

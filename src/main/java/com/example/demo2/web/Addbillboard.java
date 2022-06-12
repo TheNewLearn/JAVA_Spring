@@ -31,7 +31,7 @@ public class Addbillboard {
             Date cdate = formatter.parse(enddate);
             br.save(new Billboard(null,title,new Date(),"Admin",cdate,content));
             System.out.println(cdate);
-        return "redirect:/index";
+        return "redirect:/";
 
     }
 }
